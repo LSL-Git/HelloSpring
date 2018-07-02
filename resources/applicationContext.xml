@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+	
+	<!-- 通过bean元素声明需要Spring创建的实例。该实例的类型通过class属性指定，并通过id属性为该实例指定一个名称，以便在程序中使用 -->
+	<bean id="helloSpring" class="com.lsl.ssm.springdemo.HelloSpring">
+	
+		<!-- property元素用来为实例的属性赋值,此处实际是调用setWho()方法实现赋值操作 -->
+		<property name="who">
+		
+			<!-- 此处将字符串"Spring"赋值给who属性 -->
+			<value>Spring</value>
+		</property>
+	</bean>
+	
+	<bean id="laoZiSay" class="com.lsl.ssm.service.Dialogue">
+		<property name="person">
+			<value>老子</value>
+		</property>
+		<property name="words">
+			<value>中午不睡,下午崩溃!</value>
+		</property>
+	</bean>
+	
+	<bean id="kongZiSay" class="com.lsl.ssm.service.Dialogue">
+		<property name="person">
+			<value>孔子</value>
+		</property>
+		<property name="words">
+			<value>老子说的对!</value>
+		</property>
+	</bean>
+	
+	<bean id="zgSay" class="com.lsl.ssm.springdemo.Demo">
+		<property name="name">
+			<value>张嘎</value>
+		</property>
+		<property name="words">
+			<value>三天不打鬼子，手都痒痒！</value>
+		</property>
+	</bean>
+	
+	<bean id="rodSay" class="com.lsl.ssm.springdemo.Demo">
+		<property name="name"><value>Rod</value></property>
+		<property name="words"><value>世界上有10种人，认识二进制的和不认识二进制的。</value></property>
+	</bean>
+</beans>
